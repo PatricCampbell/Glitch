@@ -26,7 +26,7 @@ channel_id | id | foreign key to channels
 
 ### ChannelUsers
 column name| data type| details
-id | integer | not null, primary key
 --- | --- | ---
+id | integer | not null, primary key
 channel_id | integer | not null, foreign key to channels
 user_id | integer | not null, foreign key to users
