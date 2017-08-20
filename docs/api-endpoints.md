@@ -15,7 +15,8 @@
 
 ##### Channels
 * GET /api/channels/:channelID
-* Accepts channel type, channel or direct message
+
+   * Accepts channel type, channel or direct message
 * POST /api/channels
 * PATCH /api/channels/:channelId
 * DELETE /api/channels/:channelId
