@@ -3,8 +3,7 @@
 Heroku Link
   Coming Soon
 
-Trello Link
-  Coming Soon
+[Trello](https://trello.com/b/K0B4MTzt/glitch)
 
 ## Minimum Viable Product
 
