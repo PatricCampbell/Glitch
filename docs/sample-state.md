@@ -1,3 +1,4 @@
+```js
 {
   entities: {
     users: {
@@ -51,3 +52,4 @@
     avatar_image: 'patric.jpg'
   }
 }
+```
