@@ -15,6 +15,8 @@
 ### UserInfoContainer
 * UserInfo
 
+### Channels
+
 ### ChannelListContainer
 * ChannelList
 * ChannelListItem
@@ -35,3 +37,14 @@
 * NewMessageForm
 
 # Routes
+
+Path | Component 
+:---: |:---:
+"/" | SplashPage
+"/signup" | SignUpForm
+"/login" | LoginForm
+"/channels/:channelID" | Channels
+"/channels/:channelID/new" | NewChannelContainer
+"/channels/:channelId/edit" | EditChannelContainer
+"/dms/new" | DirectMEssageContainer
+"/user/:userID" | UserInfoContainer
