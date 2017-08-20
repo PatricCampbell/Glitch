@@ -20,11 +20,11 @@ Glitch is a full stack web application inspired by Slack using Ruby on Rails as 
 
 ## Design Docs
 
-* View Wireframes
-* React Components
-* API Endpoints
-* DB Schema
-* Sample State
+* [View Wireframes](./wireframes/)
+* [React Components](./component-hierarchy.md)
+* [API Endpoints](./api-endpoints.md)
+* [DB Schema](schema.md)
+* [Sample State](sample-state.md)
 
 ## Implmentation Timeline
 
