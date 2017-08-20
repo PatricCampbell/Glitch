@@ -41,7 +41,7 @@
     }
   },
   ui: {
-    currentChannel: 'PopMusic,
+    currentChannel: 'PopMusic'
   },
   errors: {
     channel: ['That channel does not exist']
