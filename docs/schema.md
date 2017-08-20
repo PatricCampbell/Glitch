@@ -1,3 +1,5 @@
+# Schema Information
+
 ### Users
 column name | data type | details
 --- | --- | ---
