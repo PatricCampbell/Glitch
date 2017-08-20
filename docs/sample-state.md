@@ -44,7 +44,7 @@
     currentChannel: 'PopMusic,
   },
   errors: {
-    channel: ['That channel does not exist'],
+    channel: ['That channel does not exist']
   },
   session: {
     id: 1,
