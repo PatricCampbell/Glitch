@@ -12,8 +12,6 @@
 ### EditChannelContainer
 * EditChannelForm
 
-### Channel
-
 ### UserInfoContainer
 * UserInfo
 
