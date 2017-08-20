@@ -18,7 +18,7 @@
     },
     directMessages: {
       id: 1,
-      user_id: 7,
+      user_ids: [7],
       body: 'I just love your music!'
         },
     chatMessages: {

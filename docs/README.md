@@ -16,7 +16,7 @@ Glitch is a full stack web application inspired by Slack using Ruby on Rails as 
 * Live Chat
 * Channels
 * Direct Messages
-* Teams or multi-person Direct Messages
+* Multi-person Direct Messages
 
 ## Design Docs
 
