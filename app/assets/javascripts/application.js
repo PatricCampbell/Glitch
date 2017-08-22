@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require react-rails-hot-loader
 //= require_tree .
