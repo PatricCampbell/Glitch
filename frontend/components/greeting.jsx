@@ -5,8 +5,8 @@ const Greeting = props => {
   if (props.currentUser === null) {
     return (
       <div>
-        <Link to='/signup'>Signup!</Link>
-        <Link to='/login'>Login!</Link>
+        <Link to='/signup'>Signup</Link>
+        <Link to='/login'>Login</Link>
       </div>
     );
   } else {

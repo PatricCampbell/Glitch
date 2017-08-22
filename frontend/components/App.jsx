@@ -3,14 +3,12 @@ import { Route } from 'react-router-dom';
 import GreetingContainer from './greetingContainer';
 import SessionFormContainer from './SessionFormContainer';
 import { AuthRoute } from '../util/routeUtil';
+import Header from './header';
 
 const App = () => {
   return (
     <div>
-      <header>
-        <h1>Welcome to Glitch</h1>
-        <GreetingContainer />
-      </header>
+      <Route path='/' exact component={Header}/>
 
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />

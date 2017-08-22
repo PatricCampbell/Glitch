@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+html {
+  font-family: 'Lato', sans-serif;
+  background-color: whitesmoke;
+}
+form {
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid grey;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 15px 25px 45px 25px;
+  background-color: white;
+}
+form h3 {
+  text-align: center;
+  width: 100%;
+  font-size: 1.65rem;
+}
+form label {
+  width: 100%;
+  text-align: center;
+}
+form label input {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+form button {
+  width: 175px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  text-shadow: 0 1px 1px rgba(0,0,0,.1);
+  color: white;
+  background-color: #2ab27b;
+  text-align: center;
+  margin: 10px auto;
+}
