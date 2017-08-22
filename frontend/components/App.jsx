@@ -8,7 +8,7 @@ import Header from './header';
 const App = () => {
   return (
     <div>
-      <Route path='/' exact component={Header}/>
+      <Route path='(/|/login|/signup)' component={Header}/>
 
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
