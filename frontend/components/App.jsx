@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import GreetingContainer from './greetingContainer';
-import SessionFormContainer from './SessionFormContainer';
+import SessionFormContainer from './sessionFormContainer';
 import { AuthRoute } from '../util/routeUtil';
 import Header from './header';
 
