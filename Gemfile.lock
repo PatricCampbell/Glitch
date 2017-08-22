@@ -40,10 +40,6 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
     arel (6.0.4)
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     bcrypt (3.1.11)
     better_errors (2.3.0)
       coderay (>= 1.0.0)
@@ -62,19 +58,13 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    connection_pool (2.2.1)
     debug_inspector (0.0.3)
-    em-websocket (0.5.1)
-      eventmachine (>= 0.12.9)
-      http_parser.rb (~> 0.6.0)
     erubi (1.6.1)
     erubis (2.7.0)
-    eventmachine (1.2.5)
     execjs (2.7.0)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    http_parser.rb (0.6.0)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -136,16 +126,6 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
-    react-rails (2.2.1)
-      babel-transpiler (>= 0.7.0)
-      connection_pool
-      execjs
-      railties (>= 3.2)
-      tilt
-    react-rails-hot-loader (0.8.0)
-      em-websocket
-      rails
-      react-rails
     sass (3.5.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -198,7 +178,6 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.2.4)
-  react-rails-hot-loader
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
