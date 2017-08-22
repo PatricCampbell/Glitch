@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
   entry: './frontend/glitch.jsx',
   output: {
-    filename: '/app/assets/javascripts',
+    filename: './app/assets/javascripts/bundle.js',
   },
   module: {
     loaders: [
