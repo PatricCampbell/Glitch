@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :username, :password_digest, :session_token, presnce: true
+  validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 8, allow_nil: true}
   after_initialize :ensure_session_token
 
@@ -32,9 +32,8 @@ class User < ActiveRecord::Base
   end
 
   def is_password?(password)
-    password_diges = BCrypt::Password.new(self.password_digest)
+    password_digest = BCrypt::Password.new(self.password_digest)
     password_digest.is_password?(password)
   end
-
 
 end
