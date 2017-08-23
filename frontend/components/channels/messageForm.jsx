@@ -34,6 +34,7 @@ class MessageForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
+          autoFocus='autofocus'
           type='text'
           value={this.state.body}
           onChange={this.handleChange}
