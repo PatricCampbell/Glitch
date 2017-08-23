@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Greeting = props => {
   if (props.currentUser === null) {
+
+    const handleDemo = e => {
+      e.preventDefault();
+      props.login({username: 'demo', password: 'demopassword'});
+    };
+
     return (
       <div>
         <Link to='/signup'>Signup</Link>
         <Link to='/login'>Login</Link>
+        <button onClick={handleDemo}>Demo Account</button>
       </div>
     );
   } else {
