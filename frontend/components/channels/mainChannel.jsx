@@ -1,9 +1,13 @@
 import React from 'react';
-import MessageListContainer from './MessageListContainer';
+import MessageListContainer from './messageListContainer';
+import MessageFormContainer from './messageFormContainer';
 
 const MainChannel = props => {
   return (
-    <MessageListContainer />
+    <div>
+      <MessageListContainer />
+      <MessageFormContainer />
+    </div>
   );
 };
 
