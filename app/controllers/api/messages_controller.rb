@@ -4,9 +4,17 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
+    @message = Message.new(message_params)
+
+    if @message.save
+      render :show
+    else
+      # render errors
+    end
   end
 
   def destroy
+    
   end
 
   private
