@@ -1,7 +1,6 @@
 # Glitch
 
-Heroku Link
-  Coming Soon
+[Heroku](https://glitch-aa.herokuapp.com/#/)
 
 [Trello](https://trello.com/b/K0B4MTzt/glitch)
 
