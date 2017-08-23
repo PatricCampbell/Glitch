@@ -7,6 +7,8 @@ import { login, signup } from './actions/sessionActions';
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.querySelector('#root');
 
+  window.login = login;
+
   let store = configureStore();
   const currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
   if (currentUser) {
