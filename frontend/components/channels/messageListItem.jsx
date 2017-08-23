@@ -4,9 +4,14 @@ const MessageListItem = props => {
   const { body } = props.message;
 
   return (
-    <ul>
-      <li>{body}</li>
-    </ul>
+    <li>
+      <span className='author-username'>
+        {props.message.author.username}
+      </span>
+      <span className='message-body'>
+        {body}
+      </span>
+    </li>
   );
 };
 

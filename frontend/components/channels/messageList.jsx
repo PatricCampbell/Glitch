@@ -13,17 +13,18 @@ class MessageList extends React.Component {
       messages = Object.values(this.props.messages).map(message => {
         return (
           <MessageListItem
+            deleteMessage={this.props.deleteMessage}
             message={message}
             key={message.id}
-            />
+          />
         );
       });
     }
 
     return (
-      <div>
+      <ul>
         {messages ? messages : null}
-      </div>
+      </ul>
     );
   }
 }

@@ -72,6 +72,18 @@ header {
   margin: 25px auto;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.author-username {
+  margin-right: 10px;
+}
+
 .hidden {
   display: none;
 }
