@@ -4,6 +4,7 @@ import GreetingContainer from './greetingContainer';
 import SessionFormContainer from './sessionFormContainer';
 import { AuthRoute } from '../util/routeUtil';
 import Header from './header';
+import MainChannel from './channels/mainChannel';
 
 const App = () => {
   return (
@@ -12,6 +13,8 @@ const App = () => {
 
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
+
+      <Route path='/messages' component={MainChannel} />
     </div>
   );
 };
