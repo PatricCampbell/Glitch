@@ -22,69 +22,6 @@ html {
 .full-width {
   width: 100%;
 }
-header {
-  height: 70px;
-}
-.form {
-  width: 600px;
-  margin: 5% auto;
-}
-
-.form form, .error-area {
-  box-shadow: 0 1px 1px rgba(0,0,0,.1);
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  padding: 15px 25px 45px 25px;
-  background-color: white;
-}
-
-.error-area {
-  width: 548px;
-  height: 25px;
-  margin: 0 auto 25px auto;
-  padding: 15px 25px 45px 25px;
-  border-left: 5px solid red;
-  box-shadow: 0 1px 1px rgba(0,0,0,.1);
-}
-
-.form form h3 {
-  text-align: center;
-  width: 100%;
-  font-size: 1.65rem;
-}
-.form label {
-  width: 100%;
-  text-align: center;
-  font-size: 1.1rem;
-}
-.form label input, .form label input:focus {
-  margin: 10px 20px;
-  padding: 5px;
-  width: 225px;
-  border: 2px solid #717274;
-}
-.form button {
-  width: 225px;
-  height: 35px;
-  border-radius: 5px;
-  border: none;
-  text-shadow: 0 1px 1px rgba(0,0,0,.1);
-  color: white;
-  background-color: #2ab27b;
-  text-align: center;
-  margin: 25px auto;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
 
 .hidden {
   display: none;

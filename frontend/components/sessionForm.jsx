@@ -33,9 +33,12 @@ class SessionForm extends React.Component {
     const formType = this.props.formType === '/login' ? 'Log In' : 'Sign Up';
 
     return (
-      <div className='form'>
+      <div className='form-container'>
         <ErrorArea errors={this.props.errors}/>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          className='session-form'
+          onSubmit={this.handleSubmit}
+        >
           <h3>
             {formType}
           </h3>
