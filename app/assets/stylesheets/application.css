@@ -14,9 +14,12 @@
  *= require_self
  */
 html {
-  font-family: 'Lato', sans-serif;
   background-color: whitesmoke;
   overflow: hidden;
+  font-family: 'Lato', sans-serif;    
+}
+
+body {
 }
 
 .full-width {
