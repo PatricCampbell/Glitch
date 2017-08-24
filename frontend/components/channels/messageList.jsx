@@ -12,16 +12,24 @@ class MessageList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getAllMessages();
+    this.props.getAllMessages()
+      .then(() => this.messagesToBottom());
 
     const channel = this.pusher.subscribe('main_channel');
+
     channel.bind('new_message', data => {
-      this.props.getAllMessages();
+      this.props.getAllMessages()
+        .then(() => this.messagesToBottom());
     });
   }
 
   componentWillUnmount() {
     this.pusher.unsubscribe('main_channel');
+  }
+
+  messagesToBottom() {
+    const messagesDiv = document.querySelector('.messages-container');
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
   }
 
   render() {
@@ -40,9 +48,11 @@ class MessageList extends React.Component {
     }
 
     return (
-      <ul className='message-list full-width'>
-        {messages ? messages : null}
-      </ul>
+      <div className='messages-container'>
+        <ul className='message-list full-width'>
+          {messages ? messages : null}
+        </ul>
+      </div>
     );
   }
 }
