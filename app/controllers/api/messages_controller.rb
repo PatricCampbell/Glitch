@@ -1,3 +1,5 @@
+require 'pusher'
+
 class Api::MessagesController < ApplicationController
   def index
     @messages = Message.all.includes(:author)
@@ -7,6 +9,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
+      Pusher.trigger('main_channel', 'new_message', {})
       render :show
     else
       render json: @message.errors.full_messages, status: 401
