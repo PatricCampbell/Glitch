@@ -9,13 +9,13 @@ import MainChannel from './channels/mainChannel';
 const App = () => {
   return (
     <div>
-      <AuthRoute path='(/|/login|/signup)' component={Header}/>
+      <Route path='(/|/login|/signup)' component={Header}/>
 
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
-      <div className='purplish'>
+      {/* <div className='purplish'>
         <Route path='/messages' component={MainChannel} />
-      </div>
+      </div> */}
     </div>
   );
 };
