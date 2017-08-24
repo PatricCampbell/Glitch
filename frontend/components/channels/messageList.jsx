@@ -28,8 +28,8 @@ class MessageList extends React.Component {
   }
 
   messagesToBottom() {
-    const messagesDiv = document.querySelector('.messages-container');
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    // const messagesDiv = document.querySelector('.messages-container');
+    // messagesDiv.scrollTop = messagesDiv.scrollHeight;
   }
 
   render() {
