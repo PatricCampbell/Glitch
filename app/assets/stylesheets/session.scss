@@ -1,0 +1,123 @@
+.form-container {
+    width: 550px;
+    margin: 5% auto;
+  }
+
+  .session-form, .error-area {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  }
+
+  .error-area {
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  .session-form {
+    padding: 32px;
+    height: 40vh;
+    max-height: 300px;
+    min-height: 230px;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .error-area {
+    height: 10vh;
+    margin-bottom: 15px;
+    border-left: 5px solid #CB5234;
+    font-family: inherit;
+  }
+
+  .session-form h3,
+  .session-form label,
+  .session-form button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .session-form h3 { 
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: #555459;
+  }
+
+  .session-form input, .session-form input:focus {
+    margin-left: 10px;
+    border: 1px solid #717274;
+    padding: 2px 10px;
+    border-radius: 5px;
+    line-height: 2rem;
+    width: 200px;
+  }
+
+  .session-form button {
+    border-radius: 5px;
+    border: none;
+    background-color: #2ab27b;
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 600;
+    height: 45px;
+    width: 300px;
+  }
+
+  .session-form button:hover {
+    transform: scale(1.05);
+  }
+  
+  // .session-form, .error-area {
+  //   box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  //   border: 1px solid lightgrey;
+  //   border-radius: 5px;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   align-content: center;
+  //   padding: 15px 25px 45px 25px;
+  //   background-color: white;
+  // }
+  
+  // .error-area {
+  //   width: 548px;
+  //   height: 25px;
+  //   margin: 0 auto 25px auto;
+  //   padding: 15px 25px 45px 25px;
+  //   border-left: 5px solid red;
+  //   box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  // }
+  
+  // .session-form h3 {
+  //   text-align: center;
+  //   width: 100%;
+  //   font-size: 1.65rem;
+  // }
+
+  // .form-container label {
+  //   width: 100%;
+  //   text-align: center;
+  //   font-size: 1.1rem;
+  // }
+
+  // .form-container label input, .form-container label input:focus {
+  //   margin: 10px 20px;
+  //   padding: 5px;
+  //   width: 225px;
+  //   border: 2px solid #717274;
+  // }
+
+  // .form-container button {
+  //   width: 225px;
+  //   height: 35px;
+  //   border-radius: 5px;
+  //   border: none;
+  //   text-shadow: 0 1px 1px rgba(0,0,0,.1);
+  //   color: white;
+  //   background-color: #2ab27b;
+  //   text-align: center;
+  //   margin: 25px auto;
+  // }
