@@ -1,0 +1,39 @@
+.channel-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  min-width: 60vw;
+  margin: 0 auto;
+  padding: 2% 0;
+  height: 94vh;
+  align-content: flex-end;
+  background: white;
+}
+
+.message-input {
+  padding: 7px;
+  border: 2px solid #717274;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  font-size: 1.0rem;
+}
+
+.message-input:focus {
+  border: 2px solid #717274;
+}
+
+.message-form {
+  width: 96%;
+  margin: 10px auto;
+}
+
+.message {
+  line-height: 2rem;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.author-username {
+  margin-right: 10px;
+}

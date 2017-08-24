@@ -32,8 +32,12 @@ class MessageForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form
+        className='message-form'
+        onSubmit={this.handleSubmit}>
         <input
+          placeholder='Hit Enter to Send Message'
+          className='message-input full-width'
           autoFocus='autofocus'
           type='text'
           value={this.state.body}

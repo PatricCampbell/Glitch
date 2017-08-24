@@ -40,7 +40,7 @@ class MessageList extends React.Component {
     }
 
     return (
-      <ul>
+      <ul className='message-list full-width'>
         {messages ? messages : null}
       </ul>
     );

@@ -4,7 +4,7 @@ import MessageFormContainer from './messageFormContainer';
 
 const MainChannel = props => {
   return (
-    <div>
+    <div className='channel-container'>
       <MessageListContainer />
       <MessageFormContainer />
     </div>
