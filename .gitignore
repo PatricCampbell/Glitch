@@ -19,4 +19,3 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 yarn.lock
-Gemfile.lock
