@@ -11,7 +11,7 @@ const MessageListItem = props => {
   return (
     <li className='message-item'>
       <div>
-        <img src='http://placebear.com/36/36' />
+        <img src={`${props.message.author.avatar_url}`} width='36' height='36' />
       </div>
       <div className='message'>
         <span className='author-username bold'>

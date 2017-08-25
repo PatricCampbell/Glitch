@@ -5,7 +5,7 @@ class MessageList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.pusher = new Pusher('f7f2cb393fa04fd5c8e3', {
+    this.pusher = new Pusher('42ee8e819840dd56e102', {
       cluster: 'us2',
       encrypted: true,
     });
