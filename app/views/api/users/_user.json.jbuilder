@@ -1,1 +1,3 @@
-json.extract! user, :id, :username, :avatar_url
+json.id user.id
+json.username user.username
+json.avatar_url user.avatar.url

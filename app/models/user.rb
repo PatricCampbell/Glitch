@@ -6,15 +6,17 @@
 #  username        :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  avatar_url      :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+# TODO: add a default file for avatar
 
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true}
+  has_attached_file :avatar, default_url: "missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   after_initialize :ensure_session_token
 
   attr_reader :password
