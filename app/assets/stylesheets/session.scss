@@ -35,10 +35,15 @@
   }
 
   .session-form h3,
-  .session-form label,
   .session-form button {
     width: 100%;
     text-align: center;
+  }
+
+  .session-form label {
+    width: 100%;
+    text-align: right;
+    margin-right: 19%;
   }
 
   .session-form h3 { 
