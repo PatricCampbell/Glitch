@@ -1,5 +1,6 @@
 import React from 'react';
 import ErrorArea from './errorArea';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
@@ -31,6 +32,8 @@ class SessionForm extends React.Component {
   render() {
 
     const formType = this.props.formType === '/login' ? 'Log In' : 'Sign Up';
+    const otherForm = this.props.formType === '/login' ? '/signup' : '/login';
+    const otherFormType = this.props.formType === '/login' ? 'Sign Up' : 'Log In';
 
     return (
       <div className='form-container'>
@@ -58,6 +61,9 @@ class SessionForm extends React.Component {
           </label>
           <button type='submit'>{formType}
           </button>
+          <span className='full-width'>
+            <Link to={otherForm} >{otherFormType} Instead</Link>
+          </span>
         </form>
       </div>
     );
