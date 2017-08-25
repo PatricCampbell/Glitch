@@ -10,15 +10,24 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',
       password: '',
+      avatarFile: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
-    this.props.processForm(user);
+    
+    const formData = new FormData();
+    formData.append('user[username]', this.state.username)
+    formData.append('user[password]', this.state.password)
+    if (this.state.avatarFile) {
+      formData.append('user[avatar]', this.state.avatarFile)
+    }
+    
+    this.props.processForm(formData);
   }
 
   handleInput(field) {
@@ -29,11 +38,35 @@ class SessionForm extends React.Component {
     };
   }
 
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({
+        avatarFile: file,
+      });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   render() {
 
     const formType = this.props.formType === '/login' ? 'Log In' : 'Sign Up';
     const otherForm = this.props.formType === '/login' ? '/signup' : '/login';
     const otherFormType = this.props.formType === '/login' ? 'Sign Up' : 'Log In';
+    
+    const avatarInput = () => {
+      return (
+        <label>Avatar Image
+         <input type="file" onChange={this.updateFile} />
+        </label>  
+      );
+    };
+    // debugger
 
     return (
       <div className='form-container'>
@@ -59,6 +92,7 @@ class SessionForm extends React.Component {
               onChange={this.handleInput('password')}
               />
           </label>
+          {formType === 'Sign Up' ? avatarInput() : null}
           <button type='submit'>{formType}
           </button>
           <span className='full-width'>
