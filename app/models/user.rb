@@ -12,8 +12,8 @@
 #
 
 class User < ActiveRecord::Base
-  # TODO: Add uniqueness validator
   validates :username, :password_digest, :session_token, presence: true
+  validates :username, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true}
   after_initialize :ensure_session_token
 

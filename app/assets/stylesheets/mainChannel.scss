@@ -37,9 +37,12 @@
 }
 
 .message {
-  line-height: 2rem;
+  line-height: 1.4rem;
   width: 96%;
-  margin: 0 auto;
+  margin-left: 16px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .author-username {
@@ -48,4 +51,18 @@
 
 .message-list {
   margin-top: auto;
+}
+
+.message-item {
+  display: flex;
+  align-items: flex-start;
+  width: 95%;
+  margin: 10px auto;
+}
+
+.message-time {
+  margin-left: 16px;
+  color: #9e9ea6;
+  font-weight: normal;
+  font-size: .7rem;
 }
