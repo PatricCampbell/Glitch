@@ -1,9 +1,12 @@
+.index {
+  display: flex;
+}
+
 .channel-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
-  min-width: 60vw;
-  margin-left: 12%;
+  width: 88%;
+  // margin-left: 12%;
   padding: 2% 0;
   height: 94vh;
   align-content: flex-end;

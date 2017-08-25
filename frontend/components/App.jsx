@@ -4,6 +4,7 @@ import GreetingContainer from './greetingContainer';
 import SessionFormContainer from './sessionFormContainer';
 import { AuthRoute } from '../util/routeUtil';
 import Header from './header';
+import IndexSideBarContainer from './channels/indexSideBarContainer';
 import MainChannel from './channels/mainChannel';
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       <AuthRoute path='/login' component={SessionFormContainer} />
       <AuthRoute path='/signup' component={SessionFormContainer} />
       
-      <div className='purplish'>
+      <div className='index purplish'>
+        <Route path='/messages' component={IndexSideBarContainer} />
         <Route path='/messages' component={MainChannel} />
       </div>
     </div>
