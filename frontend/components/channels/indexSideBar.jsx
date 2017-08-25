@@ -9,7 +9,9 @@ const IndexSideBar = props => {
 
   return (
     <div className='sidebar'>
-      <h3>{props.currentUser.username}</h3>
+      <h3 className='username-display'>
+        Hello, {props.currentUser.username}
+      </h3>
       <button
         className='logout-btn'
         onClick={handleClick}
