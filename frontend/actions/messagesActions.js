@@ -32,16 +32,16 @@ export const getAllMessages = (channelId) => dispatch => {
   );
 };
 
-export const sendMessage = message => dispatch => {
+export const sendMessage = (message, channelId) => dispatch => {
   return (
-    MessageApiUtil.sendNewMessage(message)
+    MessageApiUtil.sendNewMessage(message, channelId)
       .then(message => dispatch(receiveOneMessage(message)))
   );
 };
 
-export const deleteMessage = message => dispatch => {
+export const deleteMessage = (message, channelId) => dispatch => {
   return (
-    MessageApiUtil.deleteMessage(message)
+    MessageApiUtil.deleteMessage(message, channelId)
       .then(message => dispatch(removeMessage(message)))
   );
 };
