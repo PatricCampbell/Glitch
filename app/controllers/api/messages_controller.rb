@@ -2,11 +2,12 @@ require 'pusher'
 
 class Api::MessagesController < ApplicationController
   def index
-    @messages = Message.all.includes(:author)
+    @messages = Message.includes(:author).where(channel_id: params[:channel_id])
   end
 
   def create
     @message = Message.new(message_params)
+    @message.channel_id = params[:channel_id]
 
     if @message.save
       Pusher.trigger('main_channel', 'new_message', {})
