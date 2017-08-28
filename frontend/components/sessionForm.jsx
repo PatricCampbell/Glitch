@@ -18,14 +18,11 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    debugger
-    const hasAvatar = this.state.avatarFile;
+    
     const formData = new FormData();
     formData.append('user[username]', this.state.username);
     formData.append('user[password]', this.state.password);
-    if (hasAvatar !== null) {
-      debugger
+    if (this.state.avatarFile) {
       formData.append('user[avatar]', this.state.avatarFile);
     }
     

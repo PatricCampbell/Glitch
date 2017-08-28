@@ -8,7 +8,6 @@ const MessageListItem = props => {
   const formattedSentTime = jsSentTime.toDateString() === todaysDate.toDateString() ? jsSentTime.toLocaleTimeString([],
     { hour: '2-digit', minute: '2-digit' }) : `${jsSentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} ${jsSentTime.toDateString()}`;
 
-  debugger
   return (
     <li className='message-item'>
       <div>
