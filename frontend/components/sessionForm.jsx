@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     
     const formData = new FormData();
     formData.append('user[username]', this.state.username);
