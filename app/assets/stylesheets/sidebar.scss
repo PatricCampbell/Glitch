@@ -28,13 +28,21 @@
 .channels-title {
   color: rgb(184,176,183);
   margin-top: 20px;
-  padding-left: 10px;  
+  padding-left: 15px;  
   font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 15px;
+}
+
+.channels-title i:hover {
+  color: white;
+  cursor: pointer;
 }
 
 .channels-list li {
   color: rgb(184,176,183);
-  padding-left: 10px;
+  padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
