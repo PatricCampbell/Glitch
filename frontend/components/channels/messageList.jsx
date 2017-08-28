@@ -16,8 +16,8 @@ class MessageList extends React.Component {
 
     this.props.getAllMessages(channelId)
       .then(() => this.messagesToBottom());
-
-    const channel = this.pusher.subscribe('main_channel');
+    
+    const channel = this.pusher.subscribe('channel_' + channelId);
 
     channel.bind('new_message', data => {
       this.props.getAllMessages(channelId)
