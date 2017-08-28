@@ -25,9 +25,9 @@ export const removeMessage = message => {
   };
 };
 
-export const getAllMessages = () => dispatch => {
+export const getAllMessages = (channelId) => dispatch => {
   return (
-    MessageApiUtil.fetchAllMessages()
+    MessageApiUtil.fetchAllMessages(channelId)
       .then(messages => dispatch(receiveAllMessages(messages)))
   );
 };

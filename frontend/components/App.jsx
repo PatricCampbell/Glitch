@@ -16,8 +16,8 @@ const App = () => {
       <AuthRoute path='/signup' component={SessionFormContainer} />
       
       <div className='index purplish'>
-        <ProtectedRoute path='/messages' component={IndexSideBarContainer} />
-        <ProtectedRoute path='/messages' component={MainChannel} />
+        <ProtectedRoute path='/channels/:channel_id' component={IndexSideBarContainer} />
+        <ProtectedRoute path='/channels/:channel_id' component={MainChannel} />
       </div>
     </div>
   );
