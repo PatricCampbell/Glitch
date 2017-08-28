@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const ChannelsListItem = props => {
   return (
-    <Link to={`/channels/${props.channel.id}`} >
+    <NavLink
+      to={`/channels/${props.channel.id}`}
+      activeClassName='selected-channel'
+    >
       <li>  
           # {props.channel.name}
       </li>  
-    </Link>
+    </NavLink>
   );
 }
 

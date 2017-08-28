@@ -35,8 +35,8 @@ class IndexSideBar extends React.Component {
         >
           Logout
         </button>
-        <p>Channels</p>
-        <ul>
+        <p className='channels-title'>Channels</p>
+        <ul className='channels-list'>
           {channels}
         </ul>  
       </div>

@@ -20,3 +20,35 @@
   text-align: center;
   margin-bottom: 5%;
 }
+
+.channels-list {
+  margin-top: 5px;
+}
+
+.channels-title {
+  color: rgb(184,176,183);
+  margin-top: 20px;
+  padding-left: 10px;  
+  font-size: 1.1rem;
+}
+
+.channels-list li {
+  color: rgb(184,176,183);
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.channels-list li:hover {
+  background: #3E313C;
+}
+
+.selected-channel li {
+  background: #4C9689;
+  color: white;
+}
+
+.selected-channel li:hover {
+  background: #4C9689;
+  color: white;
+}
