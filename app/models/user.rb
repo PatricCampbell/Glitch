@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true}
-  has_attached_file :avatar, default_url: "missing.png"
+  has_attached_file :avatar, default_url: "Kenneth.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   after_initialize :ensure_session_token
 

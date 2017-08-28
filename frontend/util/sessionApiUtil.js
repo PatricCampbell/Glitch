@@ -12,7 +12,9 @@ export const login = (user) => {
   return $.ajax({
     method: 'POST',
     url: '/api/sessions',
-    data: {user},
+    contentType: false,
+    processData: false,
+    data: user,
   });
 };
 

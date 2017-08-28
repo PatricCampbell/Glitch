@@ -6,7 +6,11 @@ const Greeting = props => {
 
     const handleDemo = e => {
       e.preventDefault();
-      props.login({username: 'demo', password: 'demopassword'});
+
+      const formData = new FormData();
+      formData.append('user[username]', 'demo');
+      formData.append('user[password]', 'demopassword');
+      props.login(formData);
     };
 
     return (

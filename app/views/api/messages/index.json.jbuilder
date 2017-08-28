@@ -4,6 +4,6 @@ json.array! @messages do |message|
   json.sentTime message.created_at
   json.author do
     json.username message.author.username
-    json.avatar_url message.author.avatar.url
+    json.avatar_url asset_path(message.author.avatar.url)
   end
 end
