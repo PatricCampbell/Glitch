@@ -7,7 +7,6 @@ class Api::MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.channel_id = params[:channel_id]
 
     if @message.save
       Pusher.trigger('main_channel', 'new_message', {})
@@ -26,6 +25,6 @@ class Api::MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:author_id, :body, :id)
+    params.require(:message).permit(:author_id, :channel_id, :body, :id)
   end
 end

@@ -12,15 +12,24 @@ class MessageList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getAllMessages()
+    const channelId = this.props.match.params.channel_id;
+
+    this.props.getAllMessages(channelId)
       .then(() => this.messagesToBottom());
 
     const channel = this.pusher.subscribe('main_channel');
 
     channel.bind('new_message', data => {
-      this.props.getAllMessages()
+      this.props.getAllMessages(channelId)
         .then(() => this.messagesToBottom());
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.channel_id !== nextProps.match.params.channel_id) {
+      this.props.getAllMessages(nextProps.match.params.channel_id)
+        .then(() => this.messagesToBottom());
+    }
   }
 
   componentWillUnmount() {

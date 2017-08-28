@@ -25,7 +25,7 @@ export const removeMessage = message => {
   };
 };
 
-export const getAllMessages = (channelId) => dispatch => {
+export const getAllMessages = channelId => dispatch => {
   return (
     MessageApiUtil.fetchAllMessages(channelId)
       .then(messages => dispatch(receiveAllMessages(messages)))

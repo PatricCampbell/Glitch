@@ -6,18 +6,22 @@ class MessageForm extends React.Component {
 
     this.state = {
       author_id: this.props.currentUser.id,
+      channel_id: this.props.match.params.channel_id,
       body: '',
     };
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
+    
     e.preventDefault();
     this.props.sendMessage(this.state)
       .then(() => {
         this.setState({
           author_id: this.props.currentUser.id,
+          channel_id: this.props.match.params.channel_id,      
           body: '',
         });
       });
@@ -26,6 +30,7 @@ class MessageForm extends React.Component {
   handleChange(e) {
     this.setState({
       author_id: this.props.currentUser.id,
+      channel_id: this.props.match.params.channel_id,      
       body: e.currentTarget.value,
     });
   }
