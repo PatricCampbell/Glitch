@@ -30,10 +30,18 @@ class MessageList extends React.Component {
       this.props.getAllMessages(nextProps.match.params.channel_id)
         .then(() => this.messagesToBottom());
     }
+    this.pusher.unsubscribe('channel_' + this.props.match.params.channel_id);
+    
+    const channel = this.pusher.subscribe('channel_' + nextProps.match.params.channel_id);
+    
+        channel.bind('new_message', data => {
+          this.props.getAllMessages(nextProps.match.params.channel_id)
+            .then(() => this.messagesToBottom());
+        });
   }
 
   componentWillUnmount() {
-    this.pusher.unsubscribe('main_channel');
+    this.pusher.unsubscribe('channel_' + this.props.match.params.channel_id);
   }
 
   messagesToBottom() {
