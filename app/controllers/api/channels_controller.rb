@@ -14,7 +14,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   # TODO: make edit work
-  def edit
+  def update
   end
 
   def destroy
