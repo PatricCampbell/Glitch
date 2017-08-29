@@ -46,12 +46,15 @@ class MessageListHeader extends React.Component {
     if (this.state.channel) {
       return (
         <div className='message-list-header'>
+          <div className='message-list-header-info' >
           <p className='bold'>
             # {this.state.channel.name}
           </p>
           <p>
             {this.state.channel.description}
           </p>
+        </div>  
+        <div className='message-list-header-buttons'>  
           {this.state.channel.creator_id === this.props.currentUser.id &&
             <div>  
               <button onClick={this.handleEdit}>Edit
@@ -60,6 +63,7 @@ class MessageListHeader extends React.Component {
               </button>
             </div>
           }
+        </div>  
           <div className={this.state.formState === 'shown' ? 'fixed' : null}>
             {this.state.formState === 'shown' ? <ChannelFormContainer
               formType={this.state.formType}
