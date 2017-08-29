@@ -1,0 +1,73 @@
+.channel-form {
+  padding: 32px;
+  height: 40vh;
+  max-height: 300px;
+  min-height: 230px;
+  justify-content: center;
+  align-items: baseline;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.channel-form h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.channel-form label {
+  width: 100%;
+  text-align: right;
+  margin-right: 19%;
+}
+
+.channel-form h3 { 
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: #555459;
+}
+
+.channel-form input, .channel-form input:focus {
+  margin-left: 10px;
+  border: 1px solid #717274;
+  padding: 2px 10px;
+  border-radius: 5px;
+  line-height: 2rem;
+  width: 200px;
+}
+
+.submit-btn {
+  border-radius: 5px;
+  border: none;
+  background-color: #2ab27b;
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 600;
+  width: 200px;
+}
+
+.submit-btn, .btn-area .danger-btn {
+  height: 45px;
+}
+
+.submit-btn:hover, .btn-area .danger-btn:hover {
+  transform: scale(1.05);
+}
+
+.channel-form span {
+  text-align: center;
+}
+
+.btn-area {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-area .danger-btn {
+  margin: 0;
+  width: 100px;
+}

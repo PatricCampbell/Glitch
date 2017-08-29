@@ -5,9 +5,8 @@ import { createChannel, editChannel } from '../../actions/channelActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    formType: ownProps.formType,
-    channel: ownProps.channel,
-    currentUser: state.currentUser,
+    currentUser: state.session.currentUser,
+    formType: ownProps.formType === 'create' ? 'Create' : 'Edit',
   };
 };
 

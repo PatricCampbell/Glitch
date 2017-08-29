@@ -2,10 +2,10 @@ import React from 'react';
 import ErrorArea from '../errorArea';
 
 class ChannelForm extends React.Component {
-  constuctor(props) {
+  constructor(props) {
     super(props);
 
-    if (this.props.channel === null) {
+    if (!this.props.channel) {
       this.state = {
         name: '',
         description: '',
@@ -20,12 +20,20 @@ class ChannelForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.processForm(this.state);
+    this.props.processForm(this.state)
+      .then(() => {
+        this.props.handleCloseForm(e);
+      });
+  }
+
+  handleClose(e) {
+    this.props.handleCloseForm(e);
   }
 
   handleInput(field) {
@@ -38,11 +46,12 @@ class ChannelForm extends React.Component {
 
   render() {
     return (
-      <div classNAme='form-container'>
-        <ErrorArea errors={this.props.errors} />
-        <form onSubmit={this.handleSubmit} >
+      <div className='modal'>
+        <form
+          className='form-container channel-form'
+          onSubmit={this.handleSubmit} >
           <h3>
-            {formType}
+            {this.props.formType} Channel
           </h3>
           <label>Channel Name
             <input
@@ -58,8 +67,18 @@ class ChannelForm extends React.Component {
               onChange={this.handleInput('description')}
             />
           </label>
+          <div className='btn-area'>
+            <button type='submit' className='submit-btn'>
+              {this.props.formType} Channel
+            </button>
+            <button className='danger-btn' onClick={this.handleClose} >
+              Cancel
+            </button>
+          </div>  
         </form>
       </div>  
     );
   }
 }
+
+export default ChannelForm;
