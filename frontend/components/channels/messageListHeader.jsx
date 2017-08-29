@@ -48,7 +48,7 @@ class MessageListHeader extends React.Component {
         <div className='message-list-header'>
           <div className='message-list-header-info' >
           <p className='bold'>
-            # {this.state.channel.name}
+            #{this.state.channel.name}
           </p>
           <p>
             {this.state.channel.description}
