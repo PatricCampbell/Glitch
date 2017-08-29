@@ -37,7 +37,6 @@ class MessageListItem extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <li
         className='message-item'
