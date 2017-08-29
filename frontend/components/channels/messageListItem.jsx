@@ -8,7 +8,7 @@ class MessageListItem extends React.Component {
     const jsSentTime = new Date(sentTime);
     const todaysDate = new Date();
   
-    const formattedSentTime = jsSentTime.toDateString() === todaysDate.toDateString() ? jsSentTime.toLocaleTimeString([],
+    this.formattedSentTime = jsSentTime.toDateString() === todaysDate.toDateString() ? jsSentTime.toLocaleTimeString([],
       { hour: '2-digit', minute: '2-digit' }) : `${jsSentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} ${jsSentTime.toDateString()}`;
     
     this.state = {
@@ -37,6 +37,7 @@ class MessageListItem extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <li
         className='message-item'
