@@ -20,6 +20,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.find(params[:id])
 
     @message.destroy
+    Pusher.trigger('channel_' + @message.channel_id.to_s, 'new_message', {})
     render :show
   end
 

@@ -11,6 +11,11 @@ class IndexSideBar extends React.Component {
       formType: null,
     };
 
+    this.pusher = new Pusher('42ee8e819840dd56e102', {
+      cluster: 'us2',
+      encrypted: true,
+    });
+
     this.handleLogout = this.handleLogout.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
@@ -40,7 +45,15 @@ class IndexSideBar extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllChannels();
+
+    const channel = this.pusher.subscribe('channels');
+    
+    channel.bind('new_channel', data => {
+      this.props.fetchAllChannels();
+    });
   }
+
+
 
   render() {
       const channels = Object.values(this.props.channels).map(channel => {

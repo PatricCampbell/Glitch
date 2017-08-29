@@ -1,3 +1,5 @@
+require 'pusher'
+
 class Api::ChannelsController < ApplicationController
   def index
     @channels = Channel.all
@@ -7,6 +9,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
 
     if @channel.save
+      Pusher.trigger('channels', 'new_channel', {})
       render :show
     else
       render json: @channel.errors.full_messages, status: 401
@@ -17,6 +20,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find(params[:id])
 
     if @channel.update(channel_params)
+      Pusher.trigger('channels', 'new_channel', {})      
       render :show
     else
       render json: @channel.errors.full_messages, status: 401
@@ -27,6 +31,8 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find(params[:id])
 
     @channel.destroy
+    Pusher.trigger('channels', 'new_channel', {})
+        
     render :show
   end
 
