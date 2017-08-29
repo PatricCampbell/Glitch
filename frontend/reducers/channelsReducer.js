@@ -16,6 +16,9 @@ const channelsReducer = (state = {}, action) => {
       });
       return newState;
 
+    case REMOVE_CHANNEL:
+      return _.omit(state, [action.channel.id])  
+
     default:
       return state;  
   }

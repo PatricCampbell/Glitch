@@ -2,6 +2,14 @@ import React from 'react';
 
 const MessageListHeader = props => {
   const channel = props.channels[props.match.params.channel_id];
+
+  const handleDelete = e => {
+    props.deleteChannel(channel)
+      .then(() => {
+        const firstChannelId = Object.keys(props.channels)[0];
+        props.history.push(`/channels/${firstChannelId}`)
+      });
+  };
   
   if (channel) {
     return (
@@ -16,7 +24,7 @@ const MessageListHeader = props => {
           <div>  
             <button>Edit
             </button>
-            <button>Delete
+            <button onClick={handleDelete}>Delete
             </button>
           </div>
         }

@@ -21,7 +21,7 @@ export const editChannel = channel => {
   });
 };
 
-export const deleteMessage = channel => {
+export const deleteChannel = channel => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/channels/${channel.id}`,
