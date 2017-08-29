@@ -69,3 +69,20 @@
   font-weight: normal;
   font-size: .7rem;
 }
+
+.message-list-header {
+  width: 88%;
+  height: 75px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 12%;
+  z-index: 5;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.message-list-header p {
+
+}
