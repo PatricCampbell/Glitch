@@ -13,8 +13,14 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
-  # TODO: make edit work
   def update
+    @channel = Channel.find(params[:id])
+
+    if @channel.update(channel_params)
+      render :show
+    else
+      render json: @channel.errors.full_messages, status: 401
+    end
   end
 
   def destroy
@@ -26,7 +32,7 @@ class Api::ChannelsController < ApplicationController
 
   private
   def channel_params
-    params.require(:channel).permit(:name, :description, :creator_id)
+    params.require(:channel).permit(:name, :description, :creator_id, :id)
   end
 
 end

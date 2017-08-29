@@ -10,12 +10,14 @@ class ChannelForm extends React.Component {
         name: '',
         description: '',
         creator_id: this.props.currentUser.id,
+        id: null,
       };
     } else {
       this.state = {
         name: this.props.channel.name,
         description: this.props.channel.description,
         creator_id: this.props.channel.creator_id,
+        id: this.props.channel.id,
       }
     }
 
@@ -29,7 +31,9 @@ class ChannelForm extends React.Component {
     this.props.processForm(this.state)
       .then((channel) => {
         this.props.handleCloseForm(e);
-        this.props.history.push(`/channels/${channel.channel.id}`);
+        if (this.props.formType === 'Create') {
+          this.props.history.push(`/channels/${channel.channel.id}`);
+        }
       });
   }
 
