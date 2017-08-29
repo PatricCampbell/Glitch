@@ -27,8 +27,9 @@ class ChannelForm extends React.Component {
     e.preventDefault();
 
     this.props.processForm(this.state)
-      .then(() => {
+      .then((channel) => {
         this.props.handleCloseForm(e);
+        this.props.history.push(`/channels/${channel.channel.id}`);
       });
   }
 

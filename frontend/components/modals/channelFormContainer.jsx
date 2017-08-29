@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ChannelForm from './channelForm';
 import { createChannel, editChannel } from '../../actions/channelActions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChannelForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelForm));
