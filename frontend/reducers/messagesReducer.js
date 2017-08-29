@@ -19,7 +19,7 @@ const messagesReducer = (state = {}, action) => {
       return Object.assign({}, state, newMessage);
 
     case REMOVE_MESSAGE:
-      return _.omit(state, [action.id]);
+      return _.omit(state, [action.message.id]);
 
     default:
       return state;

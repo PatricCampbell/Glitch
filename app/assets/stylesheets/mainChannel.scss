@@ -59,8 +59,25 @@
 .message-item {
   display: flex;
   align-items: flex-start;
-  width: 95%;
-  margin: 10px auto;
+  width: 97.8%;
+  margin: 10px 0 10px auto;
+}
+
+.message-item:hover {
+  background: whitesmoke;
+}
+
+.message-item button {
+  height: 30px;
+  width: 80px;
+  margin-left: 10px;
+  margin-right: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: 1px solid #717274;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
 }
 
 .message-time {

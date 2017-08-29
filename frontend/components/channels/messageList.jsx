@@ -59,6 +59,7 @@ class MessageList extends React.Component {
             deleteMessage={this.props.deleteMessage}
             message={message}
             key={message.id}
+            currentUser={this.props.currentUser}
           />
         );
       });
