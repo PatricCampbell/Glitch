@@ -23,10 +23,10 @@ class MessageListHeader extends React.Component {
   }
 
   handleDelete(e) {
-    props.deleteChannel(channel)
+    this.props.deleteChannel(this.state.channel)
       .then(() => {
-        const firstChannelId = Object.keys(props.channels)[0];
-        props.history.push(`/channels/${firstChannelId}`)
+        const firstChannelId = Object.keys(this.props.channels)[0];
+        this.props.history.push(`/channels/${firstChannelId}`)
       });
   }
 
@@ -60,11 +60,13 @@ class MessageListHeader extends React.Component {
               </button>
             </div>
           }
-          {this.state.formState === 'shown' ? <ChannelFormContainer
-            formType={this.state.formType}
-            handleCloseForm={this.handleCloseForm}
-            channel={this.state.channel}
-          /> : null}
+          <div className={this.state.formState === 'shown' ? 'fixed' : null}>
+            {this.state.formState === 'shown' ? <ChannelFormContainer
+              formType={this.state.formType}
+              handleCloseForm={this.handleCloseForm}
+              channel={this.state.channel}
+            /> : null}
+          </div>  
         </div>
       );
     } else {
