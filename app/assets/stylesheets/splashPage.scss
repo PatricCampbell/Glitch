@@ -1,0 +1,29 @@
+.splash-page-container {
+  width: 64%;
+  margin: 200px auto;
+  display: flex;
+  height: 60vh;
+}
+
+.splash-page-section {
+  width: 50%;
+}
+
+.splash-page-image {
+  background: image-url('splash.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.splash-page-section h1 {
+  margin-bottom: 30px;
+}
+
+.splash-big-font {
+  font-size: 4.8rem;
+}
+
+.splash-small-font {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
