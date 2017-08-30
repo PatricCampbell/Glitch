@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Greeting from './greeting';
+import Header from './header';
 import { logout, login } from '../actions/sessionActions';
 
 const mapStateToProps = state => {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

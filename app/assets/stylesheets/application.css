@@ -19,9 +19,6 @@ html {
   font-family: 'Lato', sans-serif;    
 }
 
-body {
-}
-
 .full-width {
   width: 100%;
 }
@@ -46,4 +43,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+a:visited {
+  color: inherit;
 }
