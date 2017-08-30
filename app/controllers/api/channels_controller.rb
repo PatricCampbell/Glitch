@@ -2,7 +2,7 @@ require 'pusher'
 
 class Api::ChannelsController < ApplicationController
   def index
-    @channels = Channel.all
+    @channels = Channel.where(channel_type: false)
   end
 
   def create
