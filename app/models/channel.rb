@@ -12,7 +12,7 @@
 #
 
 class Channel < ActiveRecord::Base
-  validates :name, :creator_id, :channel_type, presence: true
+  validates :name, :creator_id, presence: true
   validates :name, uniqueness: true
   after_initialize :apply_default
 
