@@ -4,7 +4,7 @@ import SessionFormContainer from './sessionFormContainer';
 import { AuthRoute, ProtectedRoute } from '../util/routeUtil';
 import HeaderContainer from './headerContainer';
 import IndexSideBarContainer from './channels/indexSideBarContainer';
-import MainChannel from './channels/mainChannel';
+import MainChannelContainer from './channels/mainChannelContainer';
 import SplashPage from './splashPage';
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
       
       <div className='index purplish'>
         <ProtectedRoute path='/channels/:channel_id' component={IndexSideBarContainer} />
-        <ProtectedRoute path='/channels/:channel_id' component={MainChannel} />
+        <ProtectedRoute path='/channels/:channel_id' component={MainChannelContainer} />
       </div>
     </div>
   );

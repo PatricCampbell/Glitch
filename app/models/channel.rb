@@ -20,7 +20,8 @@ class Channel < ActiveRecord::Base
     foreign_key: :creator_id,
     class_name: :User
   
-  has_many :messages
+  has_many :messages,
+   dependent: :destroy
 
   has_many :users,
     through: :channel_users,
