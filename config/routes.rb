@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :channels, only: [:index, :create, :update, :destroy] do 
       resources :messages, only: [:index, :create, :destroy]
     end
+    resources :direct_messages, only: [:index, :create, :update, :destroy] do
+      resources :messages, only: [:index, :create, :destroy]
+    end
   end
 end
