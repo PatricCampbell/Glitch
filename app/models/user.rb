@@ -34,6 +34,13 @@ class User < ActiveRecord::Base
     class_name: :Channel,
     dependent: :destroy
 
+  has_many :direct_messages,
+    through: :channel_users,
+    source: :channel
+
+  has_many :channel_users    
+  
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end

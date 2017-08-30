@@ -23,8 +23,10 @@ class Channel < ActiveRecord::Base
   has_many :messages
 
   has_many :users,
-    through: :messages,
-    source: :author
+    through: :channel_users,
+    source: :user
+
+  has_many :channel_users
 
   def apply_default
     @channel_type ||= false
