@@ -10,8 +10,8 @@ class MainChannel extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const firstChannelId = Object.keys(nextProps.channels)[0];
-    // debugger
-    if ((Object.keys(nextProps.channels).length > 0) && !Object.keys(nextProps.channels).includes(nextProps.match.params.channel_id)) {
+
+    if ((Object.keys(nextProps.channels).length > 0) && Object.keys(nextProps.directMessages).length == 0 &&!Object.keys(nextProps.channels).includes(nextProps.match.params.channel_id)) {
       this.props.history.push(`/channels/${firstChannelId}`);
     }
   }

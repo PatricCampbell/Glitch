@@ -7,7 +7,7 @@ const ChannelsListItem = props => {
       to={`/channels/${props.channel.id}`}
       activeClassName='selected-channel'
     >
-      <li>  
+      <li>
           # {props.channel.name}
       </li>  
     </NavLink>

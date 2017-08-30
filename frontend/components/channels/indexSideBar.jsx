@@ -45,6 +45,7 @@ class IndexSideBar extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllChannels();
+    this.props.fetchAllDirectMessages(this.props.currentUser);
 
     const channel = this.pusher.subscribe('channels');
     
@@ -53,14 +54,18 @@ class IndexSideBar extends React.Component {
     });
   }
 
-
-
   render() {
-      const channels = Object.values(this.props.channels).map(channel => {
-        return (
-            <ChannelsListItem key={channel.id} channel={channel} />
-        );
-      });
+    const channels = Object.values(this.props.channels).map(channel => {
+      return (
+        <ChannelsListItem key={channel.id} channel={channel} />
+      );
+    });
+    
+    const directMessages = Object.values(this.props.directMessages).map(dm => {
+      return (
+        <ChannelsListItem key={dm.id} channel={dm} />
+      );
+    });
 
     return (
       <div className='sidebar'>
@@ -84,6 +89,18 @@ class IndexSideBar extends React.Component {
         </span>
         <ul className='channels-list'>
           {channels}
+        </ul>
+        <span className='dms-title'>
+          <p>Direct Messages</p>
+          <i
+            className="fa fa-plus-circle"
+            aria-hidden="true"
+            onClick={this.handleCreate}
+          >
+          </i>
+        </span>
+        <ul className='dms-list'>
+          {directMessages}
         </ul>
         {this.state.formState === 'shown' ? <ChannelFormContainer
           formType={this.state.formType}

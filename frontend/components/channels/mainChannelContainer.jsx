@@ -5,6 +5,7 @@ import MainChannel from './mainChannel';
 const mapStateToProps = state => {
   return {
     channels: state.entities.channels,
+    directMessages: state.entities.directMessages,
   };
 };
 

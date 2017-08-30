@@ -22,11 +22,11 @@
   margin-bottom: 5%;
 }
 
-.channels-list {
+.channels-list, .dms-list {
   margin-top: 5px;
 }
 
-.channels-title {
+.channels-title, .dms-title {
   color: rgb(184,176,183);
   margin-top: 20px;
   padding-left: 15px;  
@@ -36,19 +36,19 @@
   padding-right: 15px;
 }
 
-.channels-title i:hover {
+.channels-title i:hover, .dms-title i:hover {
   color: white;
   cursor: pointer;
 }
 
-.channels-list li {
+.channels-list li, .dms-list li {
   color: rgb(184,176,183);
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-.channels-list li:hover {
+.channels-list li:hover, .dms-list li:hover {
   background: #3E313C;
 }
 
