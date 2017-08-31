@@ -11,6 +11,7 @@ class IndexSideBar extends React.Component {
       channelFormState: 'hidden',
       channelFormType: null,
       directMessageFormState: 'hidden',
+      userMenuState: 'hidden',
     };
 
     this.pusher = new Pusher('42ee8e819840dd56e102', {
@@ -21,7 +22,20 @@ class IndexSideBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
+    this.handleUserMenuToggle = this.handleUserMenuToggle.bind(this);
     this.handleCreateDirectMessage = this.handleCreateDirectMessage.bind(this);
+  }
+
+  handleUserMenuToggle(e) {
+    if (this.state.userMenuState === 'hidden') {
+      this.setState({
+        userMenuState: 'shown',
+      });
+    } else {
+      this.setState({
+        userMenuState: 'hidden',
+      });
+    }
   }
 
   handleLogout(e) {
@@ -81,15 +95,19 @@ class IndexSideBar extends React.Component {
 
     return (
       <div className='sidebar'>
-        <h3 className='username-display'>
-          Hello, {this.props.currentUser.username}
-        </h3>
-        <button
-          className='danger-btn'
-          onClick={this.handleLogout}
-        >
-          Logout
-        </button>
+        <div className='username-area' onClick={this.handleUserMenuToggle}>
+          <h3 className='username-display'>
+            <i className='fa fa-circle' aria-hidden='true'></i>
+            {this.props.currentUser.username}
+          </h3>
+          {this.state.userMenuState === 'shown' ? <div className='user-menu'>
+            <img src={this.props.currentUser.avatar} width='36px' height='36px' />
+            <h3>{this.props.currentUser.username}</h3>
+            <ul>
+              <li onClick={this.handleLogout}>Sign out of Glitch</li>
+            </ul>
+          </div> : null}
+        </div>  
         <span className='channels-title'>
           <p>Channels</p>
           <i

@@ -18,8 +18,10 @@
 };
 
 .username-display {
-  text-align: center;
+  font-size: .9rem;
+  color: rgb(184,176,183);
   margin-bottom: 5%;
+  padding-left: 15px;  
 }
 
 .channels-list, .dms-list {
@@ -48,7 +50,7 @@
   padding-bottom: 5px;
 }
 
-.channels-list li:hover, .dms-list li:hover {
+.channels-list li:hover, .dms-list li:hover, .username-area:hover {
   background: #3E313C;
 }
 
@@ -60,4 +62,27 @@
 .selected-channel li:hover {
   background: #4C9689;
   color: white;
+}
+
+.fa-circle {
+  color: #38978D;
+  margin-right: 5px;
+}
+
+.username-area {
+  height: 40px;
+  line-height: 40px;
+}
+
+.user-menu {
+  background: white;
+  position: absolute;
+  z-index: 6;
+  width: 200px;
+  left: 15px;
+  top: 75px;
+  color: black;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.15);
 }
