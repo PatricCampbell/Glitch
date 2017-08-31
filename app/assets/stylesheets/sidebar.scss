@@ -18,7 +18,7 @@
 };
 
 .username-display {
-  font-size: .9rem;
+  font-size: 1rem;
   color: rgb(184,176,183);
   margin-bottom: 5%;
   padding-left: 15px;  
@@ -85,7 +85,6 @@
   padding: 20px;
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,.15);
-  cursor: pointer;
 }
 
 .user-menu-name-area {
@@ -106,6 +105,7 @@
   line-height: 1rem;
   margin-top: 5px;
   color: black;
+  cursor: pointer;  
 }
 
 .signout:hover {
