@@ -30,6 +30,14 @@
   border-top: 1px solid #E8E8E8;
 }
 
+.dm-form li:hover {
+  background: whitesmoke;
+}
+
+.dm-form li.selected {
+  
+}
+
 .dm-form li p {
   margin-left: 10px;
   line-height: 36px;

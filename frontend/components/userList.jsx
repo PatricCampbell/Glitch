@@ -6,8 +6,10 @@ const UserList = props => {
     if (user.username !== props.currentUser.username) {
       return (
         <UserListItem
-      user = { user }
-      key = { user.id }
+          handleSelect={props.handleSelect}
+          handleDeselect={props.handleDeselect}
+          user = { user }
+          key = { user.id }
         />
       );
     }
