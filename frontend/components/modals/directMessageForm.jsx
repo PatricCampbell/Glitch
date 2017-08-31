@@ -42,7 +42,7 @@ class DirectMessageForm extends React.Component {
 
   handleClose(e) {
     this.setState({
-      usersToMessage: [this.state.currentUser.id],
+      usersToMessage: [this.props.currentUser.id],
     });
     this.props.handleCloseForm(e);
   }
