@@ -101,10 +101,11 @@ class IndexSideBar extends React.Component {
             {this.props.currentUser.username}
           </h3>
           {this.state.userMenuState === 'shown' ? <div className='user-menu'>
-            <img src={this.props.currentUser.avatar} width='36px' height='36px' />
-            <h3>{this.props.currentUser.username}</h3>
-            <ul>
-              <li onClick={this.handleLogout}>Sign out of Glitch</li>
+            <ul className='user-menu-list'>
+              <li className='user-menu-name-area'><img src={this.props.currentUser.avatar} width='36px' height='36px' />
+              <h3>{this.props.currentUser.username}</h3>
+              </li>
+              <li className='signout' onClick={this.handleLogout}>Sign out of Glitch</li>
             </ul>
           </div> : null}
         </div>  

@@ -85,4 +85,30 @@
   padding: 20px;
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,.15);
+  cursor: pointer;
+}
+
+.user-menu-name-area {
+  display: flex;
+}
+
+.user-menu-name-area h3 {
+  margin-left: 5px;
+}
+
+.signout {
+  border-radius: 6px;
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  margin-top: 5px;
+  color: black;
+}
+
+.signout:hover {
+  background: rgb(45, 158, 224);
+  color: white;
 }
