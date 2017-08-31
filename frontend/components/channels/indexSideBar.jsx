@@ -1,14 +1,16 @@
 import React from 'react';
 import ChannelsListItem from './channelsListItem';
 import ChannelFormContainer from '../modals/channelFormContainer';
+import DirectMessageFormContainer from '../modals/directMessageFormContainer';
 
 class IndexSideBar extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      formState: 'hidden',
-      formType: null,
+      channelFormState: 'hidden',
+      channelFormType: null,
+      directMessageFormState: 'hidden',
     };
 
     this.pusher = new Pusher('42ee8e819840dd56e102', {
@@ -19,6 +21,7 @@ class IndexSideBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
+    this.handleCreateDirectMessage = this.handleCreateDirectMessage.bind(this);
   }
 
   handleLogout(e) {
@@ -29,17 +32,26 @@ class IndexSideBar extends React.Component {
   handleCreate(e) {
     e.preventDefault();
     this.setState({
-      formState: 'shown',
-      formType: 'create',
+      channelFormState: 'shown',
+      channelFormType: 'create',
+    });
+  }
+
+  handleCreateDirectMessage(e) {
+    e.preventDefault();
+    this.setState({
+      directMessageFormState: 'shown',
     });
   }
 
   handleCloseForm(e) {
     this.setState({
-      formState: 'hidden',
-      formType: null,
+      channelFormState: 'hidden',
+      channelFormType: null,
+      directMessageFormState: 'hidden',
     }, () => {
       this.props.fetchAllChannels();
+      this.props.fetchAllDirectMessages();
     });
   }
 
@@ -95,15 +107,18 @@ class IndexSideBar extends React.Component {
           <i
             className="fa fa-plus-circle"
             aria-hidden="true"
-            onClick={this.handleCreate}
+            onClick={this.handleCreateDirectMessage}
           >
           </i>
         </span>
         <ul className='dms-list'>
           {directMessages}
         </ul>
-        {this.state.formState === 'shown' ? <ChannelFormContainer
-          formType={this.state.formType}
+        {this.state.channelFormState === 'shown' ? <ChannelFormContainer
+          formType={this.state.channelFormType}
+          handleCloseForm={this.handleCloseForm}
+        /> : null}
+        {this.state.directMessageFormState === 'shown' ? <DirectMessageFormContainer
           handleCloseForm={this.handleCloseForm}
         /> : null}
       </div>

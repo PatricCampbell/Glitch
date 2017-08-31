@@ -37,6 +37,13 @@ class MessageListItem extends React.Component {
   }
 
   render() {
+    const { body, sentTime } = this.props.message;
+    const jsSentTime = new Date(sentTime);
+    const todaysDate = new Date();
+  
+    const formattedSentTime = jsSentTime.toDateString() === todaysDate.toDateString() ? jsSentTime.toLocaleTimeString([],
+      { hour: '2-digit', minute: '2-digit' }) : `${jsSentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} ${jsSentTime.toDateString()}`;
+
     return (
       <li
         className='message-item'
@@ -50,7 +57,7 @@ class MessageListItem extends React.Component {
           <span className='author-username bold'>
            {this.props.message.author.username}
            <span className='message-time'>
-              {this.formattedSentTime}
+              {formattedSentTime}
            </span> 
           </span>
           <span className='message-body'>
