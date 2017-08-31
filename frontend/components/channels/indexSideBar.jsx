@@ -51,7 +51,7 @@ class IndexSideBar extends React.Component {
       directMessageFormState: 'hidden',
     }, () => {
       this.props.fetchAllChannels();
-      this.props.fetchAllDirectMessages();
+      this.props.fetchAllDirectMessages(this.props.currentUser);
     });
   }
 
