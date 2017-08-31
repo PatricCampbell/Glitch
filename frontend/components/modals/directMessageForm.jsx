@@ -50,7 +50,10 @@ class DirectMessageForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createDirectMessage(this.state.usersToMessage)
-      .then(this.handleClose(e));
+      .then(directMessage => {
+        this.handleClose(e);
+        this.props.history.push(`/channels/${directMessage.directMessage.id}`);
+      });
   }
 
   render() {

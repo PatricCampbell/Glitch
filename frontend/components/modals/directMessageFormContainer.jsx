@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import DirectMessageForm from './directMessageForm';
 import { getAllUsers } from '../../actions/usersActions';
 import { createDirectMessage } from '../../actions/directMessageActions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
@@ -18,4 +19,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DirectMessageForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DirectMessageForm));
