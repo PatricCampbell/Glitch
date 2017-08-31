@@ -60,9 +60,14 @@ class DirectMessageForm extends React.Component {
             currentUser={this.props.currentUser}
             className='dm-user-list'
           />
-          <button className='danger-btn' onClick={this.handleClose} >
-            Cancel
-          </button>
+          <div className='btn-area'>
+            {this.state.usersToMessage.length > 0 ? <button className='submit-btn'>
+              Send Message
+            </button> : null }
+            <button className='danger-btn' onClick={this.handleClose} >
+              Cancel
+            </button>
+          </div>
         </form>  
       </div>
     )

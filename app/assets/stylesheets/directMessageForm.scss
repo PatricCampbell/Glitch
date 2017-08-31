@@ -21,6 +21,7 @@
 
 .dm-form ul {
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .dm-form li {
@@ -51,4 +52,8 @@
   border-radius: 5px;
   line-height: 2rem;
   width: 80%;
+}
+
+.dm-form .btn-area {
+  margin: 0 auto;
 }

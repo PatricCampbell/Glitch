@@ -6,13 +6,13 @@ export const fetchAllDirectMessages = (user) => {
   });
 };
 
-// export const createChannel = channel => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: `/api/channels/`,
-//     data: {channel},
-//   });
-// };
+export const createDirectMessage = userList => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/dirrect_messages/`,
+    data: {users: userList},
+  });
+};
 
 // export const editChannel = channel => {
 //   return $.ajax({
