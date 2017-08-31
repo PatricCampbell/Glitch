@@ -8,7 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding-top: 8rem;
+  padding-top: 10%;
 }
 
 .dm-form h3 {
@@ -25,6 +25,14 @@
 
 .dm-form li {
   width: 100%;
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #E8E8E8;
+}
+
+.dm-form li p {
+  margin-left: 10px;
+  line-height: 36px;
 }
 
 .dm-form input, .dm-form input:focus {

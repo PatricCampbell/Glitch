@@ -20,7 +20,7 @@ class DirectMessageForm extends React.Component {
       <div className='modal'>
         <form className='dm-form'>
           <h3>Direct Messages</h3>
-          <input type='text'>
+          <input type='text' placeholder='Find or Start a Conversation'>
           </input>  
           <UserList
             users={this.props.users}
