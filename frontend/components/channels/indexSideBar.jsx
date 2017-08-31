@@ -60,9 +60,14 @@ class IndexSideBar extends React.Component {
     this.props.fetchAllDirectMessages(this.props.currentUser);
 
     const channel = this.pusher.subscribe('channels');
+    const directMessage = this.pusher.subscribe('direct_messages');
     
     channel.bind('new_channel', data => {
       this.props.fetchAllChannels();
+    });
+
+    directMessage.bind('new_direct_message', data => {
+      this.props.fetchAllDirectMessages();
     });
   }
 
