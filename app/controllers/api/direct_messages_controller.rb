@@ -16,7 +16,7 @@ class Api::DirectMessagesController < ApplicationController
     @direct_message = Channel.new()
     @direct_message.channel_type = true
     @direct_message.creator_id = users.first.id
-    @direct_message.name = users.map { |user| user.username }.join(', ')
+    @direct_message.name = users.map { |user| user.username }.sort.join(', ')
 
     if @direct_message.save
       Pusher.trigger('direct_messages', 'new_direct_message', {})
