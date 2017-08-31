@@ -31,11 +31,12 @@
 }
 
 .dm-form li:hover {
-  background: whitesmoke;
+  background: #edf7fd;
+  border: 1px solid #d3ecfa;
 }
 
-.dm-form li.selected {
-  
+.dm-user-selected {
+  background: #2D9EE0;  
 }
 
 .dm-form li p {
