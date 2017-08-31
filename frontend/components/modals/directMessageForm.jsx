@@ -53,6 +53,8 @@ class DirectMessageForm extends React.Component {
       .then(directMessage => {
         this.handleClose(e);
         this.props.history.push(`/channels/${directMessage.directMessage.id}`);
+      }, error => {
+        this.handleClose(e);
       });
   }
 
