@@ -3,12 +3,14 @@ import UserListItem from './userListItem';
 
 const UserList = props => {
   const users = Object.values(props.users).map(user => {
-    return (
-      <UserListItem
-    user = { user }
-    key = { user.id }
-      />
-    );
+    if (user.username !== props.currentUser.username) {
+      return (
+        <UserListItem
+      user = { user }
+      key = { user.id }
+        />
+      );
+    }
   });
 
   return (

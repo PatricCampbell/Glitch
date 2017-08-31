@@ -18,10 +18,19 @@ class DirectMessageForm extends React.Component {
   render() {
     return (
       <div className='modal'>
-        <UserList users={this.props.users} />
-        <button className='danger-btn' onClick={this.handleClose} >
-          Cancel
-        </button>
+        <form className='dm-form'>
+          <h3>Direct Messages</h3>
+          <input type='text'>
+          </input>  
+          <UserList
+            users={this.props.users}
+            currentUser={this.props.currentUser}
+            className='dm-user-list'
+          />
+          <button className='danger-btn' onClick={this.handleClose} >
+            Cancel
+          </button>
+        </form>  
       </div>
     )
   }
