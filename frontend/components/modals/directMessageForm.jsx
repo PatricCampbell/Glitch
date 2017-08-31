@@ -49,9 +49,8 @@ class DirectMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     this.props.createDirectMessage(this.state.usersToMessage)
-      .then(this.props.handleCloseForm(e));
+      .then(this.handleClose(e));
   }
 
   render() {
