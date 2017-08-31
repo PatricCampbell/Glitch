@@ -81,7 +81,7 @@ class IndexSideBar extends React.Component {
     });
 
     directMessage.bind('new_direct_message', data => {
-      this.props.fetchAllDirectMessages();
+      this.props.fetchAllDirectMessages(this.props.currentUser);
     });
   }
 
