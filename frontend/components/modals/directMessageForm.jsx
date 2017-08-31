@@ -1,9 +1,14 @@
 import React from 'react';
+import UserList from '../userList';
 
 class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleClose = this.handleClose.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchAllUsers();
   }
 
   handleClose(e) {
@@ -13,7 +18,7 @@ class DirectMessageForm extends React.Component {
   render() {
     return (
       <div className='modal'>
-        DM Form Goes Here
+        <UserList users={this.props.users} />
         <button className='danger-btn' onClick={this.handleClose} >
           Cancel
         </button>
