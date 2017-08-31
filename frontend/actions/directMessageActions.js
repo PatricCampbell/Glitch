@@ -26,7 +26,7 @@ export const getAlldirectMessages = user => dispatch => {
 
 export const createDirectMessage = userList => dispatch => {
   return (
-    ChannelApiUtil.createChannel(userList)
+    DirectMessageApiUtil.createDirectMessage(userList)
       .then(directMessage => dispatch(receiveOneDirectMessage(directMessage)))
   );
 };

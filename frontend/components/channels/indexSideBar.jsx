@@ -10,7 +10,7 @@ class IndexSideBar extends React.Component {
     this.state = {
       channelFormState: 'hidden',
       channelFormType: null,
-      directMessageFormState: 'shown',
+      directMessageFormState: 'hidden',
     };
 
     this.pusher = new Pusher('42ee8e819840dd56e102', {

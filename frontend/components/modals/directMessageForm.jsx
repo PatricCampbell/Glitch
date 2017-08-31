@@ -4,14 +4,15 @@ import UserList from '../userList';
 class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClose = this.handleClose.bind(this);
-
+    
     this.state = {
-      usersToMessage: [],
+      usersToMessage: [this.props.currentUser.id],
     };
-
+    
+    this.handleClose = this.handleClose.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleDeselect = this.handleDeselect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -41,15 +42,22 @@ class DirectMessageForm extends React.Component {
 
   handleClose(e) {
     this.setState({
-      userToMessage: [],
+      usersToMessage: [this.state.currentUser.id],
     });
     this.props.handleCloseForm(e);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    debugger
+    this.props.createDirectMessage(this.state.usersToMessage)
+      .then(this.props.handleCloseForm(e));
   }
 
   render() {
     return (
       <div className='modal'>
-        <form className='dm-form'>
+        <form className='dm-form' onSubmit={this.handleSubmit}>
           <h3>Direct Messages</h3>
           {/* <input type='text' placeholder='Find or Start a Conversation'>
           </input>   */}
@@ -61,7 +69,7 @@ class DirectMessageForm extends React.Component {
             className='dm-user-list'
           />
           <div className='btn-area'>
-            {this.state.usersToMessage.length > 0 ? <button className='submit-btn'>
+            {this.state.usersToMessage.length > 1 ? <button className='submit-btn' type='submit'>
               Send Message
             </button> : null }
             <button className='danger-btn' onClick={this.handleClose} >

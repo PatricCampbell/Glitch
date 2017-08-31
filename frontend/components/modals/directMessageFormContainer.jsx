@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DirectMessageForm from './directMessageForm';
 import { getAllUsers } from '../../actions/usersActions';
+import { createDirectMessage } from '../../actions/directMessageActions';
 
 const mapStateToProps = state => {
   return {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchAllUsers: () => dispatch(getAllUsers()),
+    createDirectMessage: userList => dispatch(createDirectMessage(userList)),
   };
 };
 

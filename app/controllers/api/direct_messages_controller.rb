@@ -8,9 +8,9 @@ class Api::DirectMessagesController < ApplicationController
   end
 
   def create
-    userIds = JSON.parse(direct_message_params[:users])
+    userIds = direct_message_params[:users]
     users = userIds.map do |id|
-      User.find(id)
+      User.find(id.to_i)
     end
 
     @direct_message = Channel.new()
@@ -30,7 +30,7 @@ class Api::DirectMessagesController < ApplicationController
   end
 
   def direct_message_params
-    params.require(:direct_message).permit(:users)
+    params.require(:direct_message).permit(users: [])
   end
 
 end
