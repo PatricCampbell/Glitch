@@ -20,7 +20,7 @@ class UserListItem extends React.Component {
       this.setState({
         selected: true,
       },
-      this.props.handleSelect(this.props.user)); 
+      this.props.handleSelect(this.props.user));
     }
   }
 
@@ -30,7 +30,11 @@ class UserListItem extends React.Component {
         onClick={this.handleClick}
         className={this.state.selected ? 'dm-user-selected' : null}
       >
-        <img src={`${this.props.user.avatar}`} width='36' height='36' />
+        <img src={`${this.props.user.avatar}`}
+          width='36'
+          className='avatar'
+          height='36'
+        />
         <p>
           {this.props.user.username}
         </p>

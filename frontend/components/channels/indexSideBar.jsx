@@ -75,7 +75,7 @@ class IndexSideBar extends React.Component {
 
     const channel = this.pusher.subscribe('channels');
     const directMessage = this.pusher.subscribe('direct_messages');
-    
+
     channel.bind('new_channel', data => {
       this.props.fetchAllChannels();
     });
@@ -91,7 +91,7 @@ class IndexSideBar extends React.Component {
         <ChannelsListItem key={channel.id} channel={channel} />
       );
     });
-    
+
     const directMessages = Object.values(this.props.directMessages).map(dm => {
       return (
         <ChannelsListItem key={dm.id} channel={dm} />
@@ -107,13 +107,18 @@ class IndexSideBar extends React.Component {
           </h3>
           {this.state.userMenuState === 'shown' ? <div className='user-menu'>
             <ul className='user-menu-list'>
-              <li className='user-menu-name-area'><img src={this.props.currentUser.avatar} width='36px' height='36px' />
+              <li className='user-menu-name-area'>
+                <img src={this.props.currentUser.avatar}
+                width='36px'
+                height='36px'
+                className='avatar'
+              />
               <h3>{this.props.currentUser.username}</h3>
               </li>
               <li className='signout' onClick={this.handleLogout}>Sign out of Glitch</li>
             </ul>
           </div> : null}
-        </div>  
+        </div>
         <span className='channels-title'>
           <p>Channels</p>
           <i

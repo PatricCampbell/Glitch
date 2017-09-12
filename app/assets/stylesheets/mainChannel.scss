@@ -6,7 +6,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 88%;
-  // margin-left: 12%;
   padding: 2% 0;
   height: 94vh;
   align-content: flex-end;
@@ -50,6 +49,10 @@
 
 .author-username {
   margin-right: 10px;
+}
+
+.avatar {
+  border-radius: .2rem;
 }
 
 .message-list {

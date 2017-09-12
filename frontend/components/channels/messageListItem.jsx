@@ -7,10 +7,10 @@ class MessageListItem extends React.Component {
     const { body, sentTime } = this.props.message;
     const jsSentTime = new Date(sentTime);
     const todaysDate = new Date();
-  
+
     this.formattedSentTime = jsSentTime.toDateString() === todaysDate.toDateString() ? jsSentTime.toLocaleTimeString([],
       { hour: '2-digit', minute: '2-digit' }) : `${jsSentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} ${jsSentTime.toDateString()}`;
-    
+
     this.state = {
       showDeleteBtn: false,
     };
@@ -40,7 +40,7 @@ class MessageListItem extends React.Component {
     const { body, sentTime } = this.props.message;
     const jsSentTime = new Date(sentTime);
     const todaysDate = new Date();
-  
+
     const formattedSentTime = jsSentTime.toDateString() === todaysDate.toDateString() ? jsSentTime.toLocaleTimeString([],
       { hour: '2-digit', minute: '2-digit' }) : `${jsSentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} ${jsSentTime.toDateString()}`;
 
@@ -51,14 +51,18 @@ class MessageListItem extends React.Component {
         onMouseLeave={this.mouseExit}
       >
         <div>
-          <img src={`${this.props.message.author.avatar_url}`} width='36' height='36' />
+          <img src={`${this.props.message.author.avatar_url}`}
+            width='36'
+            height='36'
+            className='avatar'
+          />
         </div>
         <div className='message'>
           <span className='author-username bold'>
            {this.props.message.author.username}
            <span className='message-time'>
               {formattedSentTime}
-           </span> 
+           </span>
           </span>
           <span className='message-body'>
             {this.props.message.body}
