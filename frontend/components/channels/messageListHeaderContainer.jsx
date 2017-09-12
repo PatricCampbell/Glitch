@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     channels: state.entities.channels,
+    directMessages: state.entities.directMessages,
   };
 };
 

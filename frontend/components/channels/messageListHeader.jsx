@@ -17,9 +17,16 @@ class MessageListHeader extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    let channel = null
+    debugger
+    if (nextProps.channels[nextProps.match.params.channel_id]) {
+      channel = nextProps.channels[nextProps.match.params.channel_id];
+    } else if (nextProps.directMessages[nextProps.match.params.channel_id]){
+      channel = nextProps.directMessages[nextProps.match.params.channel_id]
+    }
     this.setState({
-      channel: nextProps.channels[nextProps.match.params.channel_id]
-    })
+      channel: channel,
+    });
   }
 
   handleDelete(e) {
@@ -53,24 +60,24 @@ class MessageListHeader extends React.Component {
           <p>
             {this.state.channel.description}
           </p>
-        </div>  
-        <div className='message-list-header-buttons'>  
+        </div>
+        <div className='message-list-header-buttons'>
           {this.state.channel.creator_id === this.props.currentUser.id &&
-            <div>  
+            <div>
               <button onClick={this.handleEdit}>Edit
               </button>
               <button onClick={this.handleDelete}>Delete
               </button>
             </div>
           }
-        </div>  
+        </div>
           <div className={this.state.formState === 'shown' ? 'fixed' : null}>
             {this.state.formState === 'shown' ? <ChannelFormContainer
               formType={this.state.formType}
               handleCloseForm={this.handleCloseForm}
               channel={this.state.channel}
             /> : null}
-          </div>  
+          </div>
         </div>
       );
     } else {
@@ -79,7 +86,7 @@ class MessageListHeader extends React.Component {
         </div>
       );
     }
-  } 
+  }
 };
 
 export default MessageListHeader;
