@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     formType: ownProps.formType === 'create' ? 'Create' : 'Edit',
+    submitMessage: ownProps.formType === 'create' ? 'Create Channel' : 'Submit Changes',
   };
 };
 

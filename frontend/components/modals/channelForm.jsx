@@ -73,15 +73,15 @@ class ChannelForm extends React.Component {
             />
           </label>
           <div className='btn-area'>
-            <button type='submit' className='submit-btn'>
-              {this.props.formType} Channel
-            </button>
             <button className='danger-btn' onClick={this.handleClose} >
               Cancel
             </button>
-          </div>  
+            <button type='submit' className='submit-btn'>
+              {this.props.submitMessage}
+            </button>
+          </div>
         </form>
-      </div>  
+      </div>
     );
   }
 }
