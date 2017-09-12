@@ -43,7 +43,7 @@ class IndexSideBar extends React.Component {
 
   handleCloseUserMenu(e) {
     document.removeEventListener('click', this.handleCloseUserMenu, false)
-    
+
     this.setState({
       userMenuState: 'hidden',
     });

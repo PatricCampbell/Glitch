@@ -104,17 +104,19 @@
   border-bottom: 1px solid #E8E8E8;
 }
 
-.message-list-header-info, .message-list-header-buttons {
+.message-list-header-buttons {
   text-align: center;
 }
 
 .message-list-header-info {
   display: flex;
+  flex-direction: column;
   margin-left: 2%;
 }
 
 .message-list-header-info p {
   padding-right: 20px;
+  padding-bottom: 10px;
 }
 
 .message-list-header-buttons {
