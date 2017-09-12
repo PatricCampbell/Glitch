@@ -24,10 +24,13 @@ class IndexSideBar extends React.Component {
     this.handleCloseForm = this.handleCloseForm.bind(this);
     this.handleUserMenuToggle = this.handleUserMenuToggle.bind(this);
     this.handleCreateDirectMessage = this.handleCreateDirectMessage.bind(this);
+    this.handleCloseUserMenu = this.handleCloseUserMenu.bind(this);
   }
 
   handleUserMenuToggle(e) {
     if (this.state.userMenuState === 'hidden') {
+      document.addEventListener('click', this.handleCloseUserMenu, false)
+
       this.setState({
         userMenuState: 'shown',
       });
@@ -36,6 +39,14 @@ class IndexSideBar extends React.Component {
         userMenuState: 'hidden',
       });
     }
+  }
+
+  handleCloseUserMenu(e) {
+    document.removeEventListener('click', this.handleCloseUserMenu, false)
+    
+    this.setState({
+      userMenuState: 'hidden',
+    });
   }
 
   handleLogout(e) {
