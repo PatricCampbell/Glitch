@@ -74,6 +74,14 @@
   line-height: 40px;
 }
 
+.username-area:hover {
+  cursor: pointer;
+}
+
+.user-menu {
+  cursor: default;
+}
+
 .user-menu {
   background: white;
   position: absolute;
