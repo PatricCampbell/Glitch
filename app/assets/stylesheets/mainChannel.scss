@@ -24,9 +24,9 @@
   padding: 7px;
   border: 2px solid #717274;
   border-radius: 5px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .message-input:focus {
@@ -52,7 +52,7 @@
 }
 
 .avatar {
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 
 .message-list {
@@ -87,7 +87,7 @@
   margin-left: 16px;
   color: #9e9ea6;
   font-weight: normal;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .message-list-header {
@@ -101,7 +101,7 @@
   background: white;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .message-list-header-buttons {

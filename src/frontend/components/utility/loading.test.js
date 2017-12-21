@@ -12,6 +12,8 @@ describe("Loading", () => {
   it("should display loading text when loading", () => {
     const wrapper = shallow(<Loading />);
 
-    expect(wrapper.find("div").text()).toBe("Loading...");
+    expect(wrapper.find("i").html()).toBe(
+      '<i class="fa fa-spinner" aria-hidden="true"></i>'
+    );
   });
 });

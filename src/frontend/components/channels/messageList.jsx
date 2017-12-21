@@ -72,8 +72,9 @@ class MessageList extends React.Component {
 
     return (
       <div className="messages-container">
+        {messages ? null : <Loading />}
         <ul className="message-list full-width">
-          {messages ? messages : <Loading />}
+          {messages ? messages : null}
         </ul>
       </div>
     );
