@@ -1,14 +1,14 @@
 // webpack.config.js
-var path = require('path');
-var webpack = require('webpack');
+var path = require("path");
+var webpack = require("webpack");
 
 var plugins = [];
 var devPlugins = [];
 
 var prodPlugins = [
   new webpack.DefinePlugin({
-    'process.env': {
-      'NODE_ENV': JSON.stringify('production')
+    "process.env": {
+      NODE_ENV: JSON.stringify("production")
     }
   }),
   new webpack.optimize.UglifyJsPlugin({
@@ -19,13 +19,13 @@ var prodPlugins = [
 ];
 
 plugins = plugins.concat(
-  process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
-)
+  process.env.NODE_ENV === "production" ? prodPlugins : devPlugins
+);
 
 module.exports = {
-  entry: './frontend/glitch.jsx',
+  entry: "./src/frontend/glitch.jsx",
   output: {
-    filename: './app/assets/javascripts/bundle.js',
+    filename: "./app/assets/javascripts/bundle.js"
   },
   plugins: plugins,
   module: {
@@ -33,15 +33,15 @@ module.exports = {
       {
         test: [/\.jsx?$/],
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['es2015', 'react']
+          presets: ["es2015", "react"]
         }
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   }
 };

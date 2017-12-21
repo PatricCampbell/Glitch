@@ -1,51 +1,56 @@
-import React from 'react';
-import MessageListItem from './messageListItem';
+import React from "react";
+import MessageListItem from "./messageListItem";
+import Loading from "../utility/loading";
 
 class MessageList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.pusher = new Pusher('42ee8e819840dd56e102', {
-      cluster: 'us2',
-      encrypted: true,
+    this.pusher = new Pusher("42ee8e819840dd56e102", {
+      cluster: "us2",
+      encrypted: true
     });
   }
 
   componentDidMount() {
     const channelId = this.props.match.params.channel_id;
 
-    this.props.getAllMessages(channelId)
-      .then(() => this.messagesToBottom());
-    
-    const channel = this.pusher.subscribe('channel_' + channelId);
+    this.props.getAllMessages(channelId).then(() => this.messagesToBottom());
 
-    channel.bind('new_message', data => {
-      this.props.getAllMessages(channelId)
-        .then(() => this.messagesToBottom());
+    const channel = this.pusher.subscribe("channel_" + channelId);
+
+    channel.bind("new_message", data => {
+      this.props.getAllMessages(channelId).then(() => this.messagesToBottom());
     });
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.channel_id !== nextProps.match.params.channel_id) {
-      this.props.getAllMessages(nextProps.match.params.channel_id)
+    if (
+      this.props.match.params.channel_id !== nextProps.match.params.channel_id
+    ) {
+      this.props
+        .getAllMessages(nextProps.match.params.channel_id)
         .then(() => this.messagesToBottom());
     }
-    this.pusher.unsubscribe('channel_' + this.props.match.params.channel_id);
-    
-    const channel = this.pusher.subscribe('channel_' + nextProps.match.params.channel_id);
-    
-        channel.bind('new_message', data => {
-          this.props.getAllMessages(nextProps.match.params.channel_id)
-            .then(() => this.messagesToBottom());
-        });
+    this.pusher.unsubscribe("channel_" + this.props.match.params.channel_id);
+
+    const channel = this.pusher.subscribe(
+      "channel_" + nextProps.match.params.channel_id
+    );
+
+    channel.bind("new_message", data => {
+      this.props
+        .getAllMessages(nextProps.match.params.channel_id)
+        .then(() => this.messagesToBottom());
+    });
   }
 
   componentWillUnmount() {
-    this.pusher.unsubscribe('channel_' + this.props.match.params.channel_id);
+    this.pusher.unsubscribe("channel_" + this.props.match.params.channel_id);
   }
 
   messagesToBottom() {
-    const messagesDiv = document.querySelector('.messages-container');
+    const messagesDiv = document.querySelector(".messages-container");
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
   }
 
@@ -66,9 +71,9 @@ class MessageList extends React.Component {
     }
 
     return (
-      <div className='messages-container'>
-        <ul className='message-list full-width'>
-          {messages ? messages : null}
+      <div className="messages-container">
+        <ul className="message-list full-width">
+          {messages ? messages : <Loading />}
         </ul>
       </div>
     );
