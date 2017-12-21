@@ -5,22 +5,29 @@ import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 import withLoading from "./withLoading";
-import SessionFormContainer from "../sessionFormContainer";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("withLoading", () => {
-  let SessionFormWithLoading;
+  let Mock, MockWithLoading;
 
   beforeEach(() => {
-    SessionFormWithLoading = withLoading(SessionFormContainer);
+    Mock = props => {
+      return <div>I'm a mock!</div>;
+    };
+
+    MockWithLoading = withLoading(Mock);
   });
 
   it("should render Loading when isLoading is true", () => {
-    const wrapper = shallow(<SessionFormWithLoading isLoading={true} />);
+    const wrapper = shallow(<MockWithLoading isLoading={true} />);
 
     expect(wrapper.find("Loading").text()).toBe("<Loading />");
   });
 
-  it("should render child Component when isLoading is false", () => {});
+  it("should render child Component when isLoading is false", () => {
+    const wrapper = shallow(<MockWithLoading isloading={false} />);
+
+    expect(wrapper.find("Mock").text()).toBe("<Mock />");
+  });
 });
